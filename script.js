@@ -1,4 +1,4 @@
-var timelineSwiper = new Swiper ('.timeline .swiper-container', {
+var timelineSwiper = new Swiper('.timeline .swiper-container', {
   direction: 'vertical',
   loop: false,
   speed: 1600,
@@ -16,3 +16,8 @@ var timelineSwiper = new Swiper ('.timeline .swiper-container', {
     }
   }
 });
+$('area[data-slide]').click(function (e) {
+  e.preventDefault();
+  timelineSwiper.slideTo(
+    $(this).data('slide')-1);
+})
