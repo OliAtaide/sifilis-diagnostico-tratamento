@@ -1,23 +1,25 @@
-var timelineSwiper = new Swiper('.timeline .swiper-container', {
-  direction: 'vertical',
-  loop: false,
-  speed: 1600,
-  pagination: '.swiper-pagination',
-  paginationBulletRender: function (swiper, index, className) {
-    var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
-    return '<span class="' + className + '">' + year + '</span>';
+
+$('img[usemap]').imageMap()
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      var bullet = '<span class="' + className + ' btn  py-0 px-2">Lâmina ' + (index + 1) + '</span>';
+      return bullet;
+    },
+
   },
-  paginationClickable: true,
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev',
-  breakpoints: {
-    768: {
-      direction: 'horizontal',
-    }
-  }
+  nextButton: '.swiper-button-disabled',
+  prevButton: '.swiper-button-disabled',
+
+
 });
+
 $('area[data-slide]').click(function (e) {
   e.preventDefault();
-  timelineSwiper.slideTo(
-    $(this).data('slide')-1);
+  swiper.slideTo(
+    $(this).data('slide') - 1);
 })
+// $(".swiper-pagination").addClass('d-flex justify-content-center')
+$(".swiper-pagination").append('<div class="d-flex justify-content-center"><div class="divider"></div></div>');

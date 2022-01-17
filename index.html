@@ -12,51 +12,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Demo styles -->
-    <style>
-        body {
-            background: #ABD4EA;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            font-size: 18px;
-            height: auto;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 30px;
-        }
-
-        .swiper-pagination {
-            top: 1%;
-            bottom: inherit !important;
-        }
-
-        .swiper-pagination-bullet {
-            border: 2px solid #265974 !important;
-            color: #265974 !important;
-            background-color: white !important;
-            font-weight: bold;
-            font-size: 12px;
-            opacity: 100%;
-            width: auto;
-            height: auto;
-        }
-
-        .swiper-pagination-bullet-active {
-            background-color: #265974 !important;
-            color: white !important;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -91,22 +47,22 @@
             </div>
             <div class="swiper-slide">
                 <img class="img-fluid" src="images/4.png" usemap="#map4">
-                <map name="map3">
+                <map name="map4">
                     <area data-slide="6" shape="rect" coords="580,165,680,180" alt="Lâmina 6" href="#6">
                     <area data-slide="6" shape="rect" coords="860,185,960,200" alt="Lâmina 6" href="#6">
                     <area data-slide="6" shape="rect" coords="265,915,365,940" alt="Lâmina 6" href="#6">
                     <area data-slide="6" shape="rect" coords="845,925,945,940" alt="Lâmina 6" href="#6">
-                    <area data-slide="6" shape="rect" coords="1230,615,1330,630" alt="Lâmina 6" href="#6">
                     <area data-slide="1" shape="rect" coords="1040,915,1140,930" alt="Lâmina 1" href="#6">
+                    <area data-slide="6" shape="rect" coords="1230,615,1330,630" alt="Lâmina 6" href="#6">
                 </map>
             </div>
             <div class="swiper-slide">
                 <img class="img-fluid" src="images/5.png" usemap="#map5">
                 <map name="map5">
-                    <area data-slide="6" shape="rect" coords="27,360,187,372" href="#6" alt="Lâmina 6">
-                    <area data-slide="6" shape="rect" coords="326,350, 511,372" href="#6" alt="Lâmina 6">
-                    <area data-slide="1" shape="rect" coords="613,362,676,374" href="#1" alt="Lâmina 1">
-                    <area data-slide="6" shape="rect" coords="748,236,807,248" href="#6" alt="Lâmina 6">
+                    <area data-slide="6" shape="rect" coords="265,805,365,825" href="#6" alt="Lâmina 6">
+                    <area data-slide="6" shape="rect" coords="845,815,945,835" href="#6" alt="Lâmina 6">
+                    <area data-slide="1" shape="rect" coords="1040,805,1140,825" href="#1" alt="Lâmina 1">
+                    <area data-slide="6" shape="rect" coords="1230,460,1330,480" href="#6" alt="Lâmina 6">
                 </map>
             </div>
             <div class="swiper-slide">
@@ -119,23 +75,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/image-map/dist/image-map.jquery.js"></script>
 
-    <script>
-        $('img[usemap]').imageMap()
-        var swiper = new Swiper(".mySwiper", {
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                renderBullet: function (index, className) {
-                    return '<span class="' + className + ' btn  py-0 px-2">Lâmina ' + (index + 1) + "</span>";
-                },
-            },
-        });
-        $('area[data-slide]').click(function (e) {
-            e.preventDefault();
-            swiper.slideTo(
-                $(this).data('slide') - 1);
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
