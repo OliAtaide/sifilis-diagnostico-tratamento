@@ -12,9 +12,17 @@ var swiper = new Swiper(".mySwiper", {
   },
   nextButton: '.swiper-button-disabled',
   prevButton: '.swiper-button-disabled',
-
+  initialSlide: getURL(),
 
 });
+
+function getURL() {
+  var arg = window.location.href.split('#');
+
+  if (arg[1] != undefined) {
+    return parseInt(arg[1]-1);
+  }
+}
 
 $('area[data-slide]').click(function (e) {
   e.preventDefault();

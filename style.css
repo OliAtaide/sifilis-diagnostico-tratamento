@@ -53,3 +53,7 @@ body {
     top: -12px;
     z-index: 3;
 }
+
+.swiper-slide:not(.swiper-slide-active) {
+    height: 100vh;  
+}
