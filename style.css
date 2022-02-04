@@ -54,6 +54,10 @@ body {
     z-index: 3;
 }
 
+.navbar{
+    background-color: #265974;
+}
+
 .swiper-slide:not(.swiper-slide-active) {
     height: 100vh;  
 }
